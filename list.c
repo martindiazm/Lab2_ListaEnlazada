@@ -92,16 +92,18 @@ void * popCurrent(List * list)
 {
     void* dato = list->current->data;
 
-    if(list->current->prev == NULL)
+    if(list->current->prev == NULL) // current es la primera posicion
     {
         list->current->next->prev = NULL;
+        list->head = list->current->next;
         free(list->current);
         return dato;
     }
     
-    if(list->current->next == NULL)
+    if(list->current->next == NULL) // current es la última posicion
     {
         list->current->prev->next = NULL;
+        list->tail = list->current->prev;
         free(list->current);
         return dato;
     }
