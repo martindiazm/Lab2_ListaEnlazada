@@ -41,3 +41,41 @@ list.c:99:12: error: returning ‘int’ from a function with return type ‘voi
    99 |     return dato;
       |            ^~~~
 9805ed7
+Thu Mar 26 07:29:09 PM UTC 2026: 
+ list.c | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:93:11: error: unused variable ‘dato’ [-Werror=unused-variable]
+   93 |     void* dato = list->current->data;}
+      |           ^~~~
+list.c: At top level:
+list.c:95:5: error: expected identifier or ‘(’ before ‘if’
+   95 |     if(list->current->prev == NULL)
+      |     ^~
+list.c:102:5: error: expected identifier or ‘(’ before ‘if’
+  102 |     if(list->current->next == NULL)
+      |     ^~
+list.c:109:9: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+  109 |     list->current->prev->next = list->current->next; //El current debe quedar apuntando al nodo siguiente del eliminado.
+      |         ^~
+list.c:110:9: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+  110 |     list->current->next->prev = list->current->prev;
+      |         ^~
+list.c:112:14: error: expected ‘)’ before ‘->’ token
+  112 |     free(list->current);
+      |              ^~
+      |              )
+list.c:114:5: error: expected identifier or ‘(’ before ‘return’
+  114 |     return dato;
+      |     ^~~~~~
+list.c:117:1: error: expected identifier or ‘(’ before ‘}’ token
+  117 | }
+      | ^
+list.c: In function ‘popCurrent’:
+list.c:93:38: error: control reaches end of non-void function [-Werror=return-type]
+   93 |     void* dato = list->current->data;}
+      |                                      ^
+cc1: all warnings being treated as errors
+52375f3
