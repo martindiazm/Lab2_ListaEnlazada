@@ -32,7 +32,13 @@ Node * createNode(void * data) {
 // Recuerda reservar memoria al puntero usando malloc o calloc.
 
 List * createList() {
-     return NULL;
+    List* lista = (List*) malloc(sizeof(List));
+    lista->head = NULL;
+    lista->tail = NULL;
+    lista->current = NULL;
+    return lista;
+    
+    
 }
 
 // 2. Programe las funciones void * firstList(List * list) y void * nextList(List * list).
@@ -92,6 +98,9 @@ void * popCurrent(List * list)
 {
     void* dato = list->current->data;
 
+    // Node* izq =  list->current->prev;
+    // Node* der =  list->current->next;
+    
     if(list->current->prev == NULL) // current es la primera posicion
     {
         list->current->next->prev = NULL;
@@ -99,7 +108,7 @@ void * popCurrent(List * list)
         free(list->current);
         return dato;
     }
-    
+
     if(list->current->next == NULL) // current es la última posicion
     {
         list->current->prev->next = NULL;
