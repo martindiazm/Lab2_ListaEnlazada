@@ -184,3 +184,14 @@ Sat Mar 28 05:48:02 PM UTC 2026:
  tests:  10|2
 total_score: 40/60
 131917e
+Sat Mar 28 05:54:43 PM UTC 2026: 
+ list.c | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:106:22: error: statement with no effect [-Werror=unused-value]
+  106 |     list->head->prev == nuevo;
+      |     ~~~~~~~~~~~~~~~~~^~~~~~~~
+cc1: all warnings being treated as errors
+201d6f9
