@@ -129,6 +129,7 @@ void pushCurrent(List * list, void * data)
         list->current->next = nuevo;
         nuevo->prev = list->current;
         list->tail = nuevo;
+        return;
     }
     
     list->current->next->prev = nuevo;
